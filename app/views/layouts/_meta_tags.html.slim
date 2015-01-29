@@ -1,0 +1,45 @@
+meta charset="utf-8"
+meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"
+meta content="noodp, noydir" name="robots"
+
+meta name="apple-mobile-web-app-url" content=root_url
+meta name="apple-mobile-web-app-title" content="Jupiter"
+
+/ meta name="twitter:widgets:link-color" content="#92e1c4"
+
+/ link media='handheld' rel='alternate' href= request.original_url
+
+/ script type="application/ld+json"
+/   | {
+/   |   "@context": "http://schema.org",
+/   |   "@type": "WebSite",
+/   |   "url": "http://cclt.jp/",
+/   |   "potentialAction": {
+/   |     "@type": "SearchAction",
+/   |     "target": "http://cclt.jp/search/?q={q}",
+/   |     "query-input": "required name=q"
+/   |   }
+/   | }
+
+/ - set_meta_tags site: @meta_title
+/ - set_meta_tags description: @meta_description
+/ - set_meta_tags keywords: @meta_keywords
+
+/ ruby:
+/ ogp = {
+/   title: @meta_title,
+/   type: t("meta.ogp.#{controller_name}.#{action_name}.type", default: t("meta.ogp.type")),
+/   image: image_url(@meta_og_image),
+/   site_name: Settings.site.title,
+/   description: @meta_description,
+/   locale: 'ja_JP' # 英語版を作る場合は要変更
+/ }
+/ tw_card = {
+/   card: "summary_large_image",
+/   site: "@chocolat_cclt",
+/ }
+
+/ set_meta_tags og: ogp
+/ set_meta_tags twitter: tw_card
+/ = display_meta_tags
+/ meta content="#{Settings.facebook.app_id}" property='fb:app_id'

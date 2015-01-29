@@ -1,0 +1,35 @@
+// app-header.scss
+// Author:: Kohei Iwasaki
+// Date:: 2014-01-28
+// サイトのレイアウト全般に適用されるcss
+
+.main-container{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	min-height: 100%;
+	overflow-x: hidden;
+	z-index:1;
+	background: transparent;
+	.main-body{
+		position: relative;
+		max-width: 640px;
+		min-height: 100%;
+		margin: 0 auto;
+		padding-bottom: 150px;
+		overflow-x: hidden;
+		background: transparent;
+	}
+}
+
+footer {
+	position:absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 140px;
+	clear: both;
+	text-align: center;
+	color: #4b4b4b;
+}
