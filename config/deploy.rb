@@ -1,9 +1,13 @@
-set :application, 'cclt'
+set :application, 'jupiter'
 set :repo_url, 'git@github.com:Iwark/jupiter.git'
-
+set :deploy_to, '/home/ec2-user/jupiter'
 set :scm, :git
 
 set :rbenv_ruby, '2.1.2'
+set :default_env, {
+  rbenv_root: "#{fetch(:rbenv_path)}",
+  path: "#{fetch(:rbenv_path)}/shims:#{fetch(:rbenv_path)}/bin:$PATH"
+}
 
 # Default value for :linked_files is []
 set :linked_files, %w{config/secrets.yml config/database.yml}
