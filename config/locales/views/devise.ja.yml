@@ -1,0 +1,8 @@
+ja:
+  devise:
+    registrations:
+      sign_up: 登録する
+    sessions:
+      login: ログイン
+      remember_me: 次回から自動的にログインする
+      logout: ログアウト
