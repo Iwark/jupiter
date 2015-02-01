@@ -5,3 +5,6 @@ ja:
         name: ユーザー名
         password: パスワード
         password_confirmation: パスワード再確認
+      character:
+        name: キャラ名
+        image: 画像

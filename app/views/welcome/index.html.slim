@@ -1,8 +1,20 @@
 h1 Welcome to Project Jupiter
 - if user_signed_in?
-  | your name is: 
-  = current_user.name
-  p = link_to t('devise.sessions.logout'), destroy_session_path(:user), method: :delete
+  
+  p your name is:
+  .ml10= current_user.name
+  
+  p your character is:
+  - if current_user.character
+    .ml10= current_user.character.name
+    .mt10 戦闘
+    ul
+    - Field.all.each do |field|
+      li.ml10= link_to field.name, field_battle_path(field)
+
+  .mt10
+    p = link_to t('characters.new.new_character'), new_character_path
+    p = link_to t('devise.sessions.logout'), destroy_session_path(:user), method: :delete
 - else
   p = link_to t('devise.registrations.sign_up'), new_registration_path(:user)
   p = link_to t('devise.sessions.login'), new_session_path(:user)

@@ -1,0 +1,18 @@
+.character-form
+  = render 'errors/form_error', obj: @character
+  = form_for @character, html: { class: 'form post-form' } do |f|
+    .form-group
+      .mt20
+        = f.label :name
+        = f.text_field :name, class: 'form-control'
+      .mt20
+        = f.label :image
+        p 今は選ぶことができませんよ（｀・ω・’）
+        / .image
+        /   .image-upload
+        /     .file
+        /       .filetext
+        /         span= t('search._upload_image_buttons.btn.upload_image')
+        /         = f.file_field :image, class: 'form-control file-field'
+      .mt20.center
+        = f.submit t('btn.create'), class: 'btn btn-primary'

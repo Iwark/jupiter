@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Job.destroy_all
+Job.create name: "見習い戦士"
+
+Field.destroy_all
+field = Field.create name: "草原"
+
+Monster.destroy_all
+Monster.create name: "スライム", present_hp: 250, max_hp: 250, exp: 100, field_id: field.id
+

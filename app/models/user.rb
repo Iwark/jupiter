@@ -23,6 +23,9 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable,
          authentication_keys: [:name]
 
+  has_many :characters
+  belongs_to :character, foreign_key: :current_character_id
+
   validates :name, presence: true, uniqueness: true, length: {minimum: 3, maximum: 8}
 
   # nameでログイン
